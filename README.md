@@ -19,22 +19,6 @@ Follow](https://img.shields.io/twitter/follow/ojoshe)](https://x.com/ojoshe)
 be a good base for serious work but also simple so it's an easy option for any small
 project, like an open source library or tool.
 
-## In a Hurry?
-
-> [!TIP]
-> 
-> You can try out this template right from your terminal.
-> Try running:
-> 
-> ```shell
-> uvx uvinit
-> ```
-> 
-> The [uvinit](https://git.new/uvinit) tool now walks you through using this template.
-> 
-> For more installation options, scroll down to [How to Use This
-> Template](#how-to-use-this-template).
-
 ## Why a New Python Project Template?
 
 > **The Story So Far**
@@ -134,22 +118,6 @@ simple-modern-uv uses uses the tools I've come to think are best for new project
   Previously, [black](https://github.com/psf/black) was the definitive formatting tool,
   but ruff now handles linting and fast, black-compatible formatting.
 
-- [**GitHub Actions**](https://github.com/actions/setup-python) for CI and publishing
-  workflows.
-
-- [**Dynamic versioning**](https://github.com/ninoseki/uv-dynamic-versioning/) so
-  release and package publication is as simple as creating a tag/release on GitHub (no
-  machinery needed to manually bump versions and commit files every release).
-
-- Workflows for **packaging and publishing to PyPI** with uv.
-  This has always been more confusing than it should be.
-  The
-  [official docs](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-  about packaging are several pages long, and then even
-  [toy tutorials](https://realpython.com/pypi-publish-python-package/) about publishing
-  are even longer. This template makes all of that basically automatic with uv, GitHub
-  Actions, and dynamic versioning.
-
 - Type checking with [**BasedPyright**](https://github.com/detachhead/basedpyright).
   (See below for more on this.)
 
@@ -191,17 +159,7 @@ the template.
 
 ## Agent Rules
 
-This template also includes a few **agent rules** for use with Cursor, Claude Code, and
-OpenAI Codex.
-
-These cover a few specific rules for modern Python as well as remind agents to build,
-lint, and run tests correctly using uv.
-
-The rules are in [.cursor/rules](template/.cursor/rules) and copied by the
-[Makefile](template/Makefile) to
-[`CLAUDE.md`](https://docs.anthropic.com/en/docs/claude-code/memory) and
-[`AGENTS.md`](https://github.com/openai/codex#memory--project-docs) so that the same
-rules work for Claude Code and OpenAI Codex.
+The rules are in [`CLAUDE.md`](https://docs.anthropic.com/en/docs/claude-code/memory) rules work for Claude Code
 (Of course you can adjust these as you wish.)
 
 ## What's the Best Python Type Checker?
@@ -282,24 +240,7 @@ references.
 > If desired, you may delete the `.github/workflows/publish.yml` file if you are not
 > publishing to PyPI.
 
-The template can be used in three ways.
-Option 1 is the quickest option with full flexibility.
-Option 2 is the normal way to use a Copier template by hand.
-Option 3 is handy if you prefer a GitHub template.
-
-### Option 1: Run `uvx uvinit`
-
-I've now created a little tool, [uvinit](https://www.github.com/jlevy/uvinit) that
-copies this template for you and walks you through everything:
-
-```shell
-uvx uvinit
-```
-
-It's the same as running `copier` and a few `git` commands yourself, with a little more
-guidance and less typing.
-
-### Option 2: Use `copier` and `git` Yourself
+### Use `copier` and `git` Yourself
 
 This template uses [Copier](https://github.com/copier-org/copier), which seems like the
 best tool nowadays for project templates.
@@ -343,17 +284,6 @@ git branch -M main
 git push -u origin main
 ```
 
-### Option 3: Use the GitHub Template
-
-If you prefer you can click the **use this template** on
-[**this repository**](https://github.com/jlevy/simple-modern-uv-template), which is the
-current output of this template.
-
-Go there and hit the "Use this template" button.
-Once you have the code, search for **`changeme`** for all field names like project name,
-author, etc. You want to do this to the `.copier-answers.yml` file as well.
-You will also want to check the license/copyright.
-
 ## Getting Started on Your Project
 
 Everything to get started is linked from the project **README.md**. It links to the
@@ -362,7 +292,7 @@ Everything to get started is linked from the project **README.md**. It links to 
 
 ## Updating Your Project Template
 
-If you use Option 1 or Option 2 or if you pick Option 3 and correctly fill in your
+If you correctly filled in your
 `.copier-answers.yml` file, you have the option to update your project with any future
 updates to this template at any time.
 
