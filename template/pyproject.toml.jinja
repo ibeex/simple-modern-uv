@@ -31,7 +31,7 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Typing :: Typed",
     # Include this to avoid accidentally publishing to PyPI:
-    # "Private :: Do Not Upload",
+    "Private :: Do Not Upload",
 ]
 
 
@@ -57,31 +57,6 @@ dev = [
 [project.scripts]
 # Add script entry points here:
 {{ package_name }} = "{{ package_module }}:main"
-
-
-# ---- Build system ----
-
-# Dynamic versioning from:
-# https://github.com/ninoseki/uv-dynamic-versioning/
-
-[build-system]
-requires = ["hatchling", "uv-dynamic-versioning"]
-build-backend = "hatchling.build"
-
-[tool.hatch.version]
-source = "uv-dynamic-versioning"
-# Note JSON schemas don't seem to be right for tool.hatch.version.source so
-# this may cause false warnings in IDEs.
-# https://github.com/ninoseki/uv-dynamic-versioning/issues/21
-
-[tool.uv-dynamic-versioning]
-vcs = "git"
-style = "pep440"
-bump = "true"
-
-[tool.hatch.build.targets.wheel]
-# The source location for the package.
-packages = ["src/{{ package_module }}"]
 
 
 # ---- Settings ----
@@ -134,20 +109,21 @@ ignore = [
 # https://marketplace.visualstudio.com/items?itemName=detachhead.basedpyright
 # https://docs.basedpyright.com/latest/configuration/config-files/#sample-pyprojecttoml-file
 include = ["src", "tests", "devtools"]
+typeCheckingMode = "basic"
 # By default BasedPyright is very strict, so you almost certainly want to disable
 # some of the rules.
 # First, these turn off warnings about (yes) how you ignore warnings:
-reportIgnoreCommentWithoutRule = false
-reportUnnecessaryTypeIgnoreComment = false
+# reportIgnoreCommentWithoutRule = false
+# reportUnnecessaryTypeIgnoreComment = false
 # A few typically noisy warnings are next.
 # How many you enable is up to you. The first few are off by default, but you can
 # comment/uncomment these as desired:
-reportMissingTypeStubs = false
-reportUnusedCallResult = false
-reportAny = false
-reportExplicitAny = false
-reportImplicitStringConcatenation = false
-reportUnreachable = false
+# reportMissingTypeStubs = false
+# reportUnusedCallResult = false
+# reportAny = false
+# reportExplicitAny = false
+# reportImplicitStringConcatenation = false
+# reportUnreachable = false
 # reportPrivateImportUsage = false
 # reportPrivateLocalImportUsage = false
 # reportMissingImports = false
