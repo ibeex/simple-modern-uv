@@ -111,7 +111,7 @@ maintain it yourself.
 simple-modern-uv uses uses the tools I've come to think are best for new projects:
 
 - [**uv**](https://github.com/astral-sh/uv) for project setup and dependencies.
-  There is also a simple makefile for dev workflows, but it simply is a convenience for
+  There is also a simple justfile for dev workflows, but it simply is a convenience for
   running uv commands.
 
 - [**ruff**](https://github.com/charliermarsh/ruff) for modern linting and formatting.
