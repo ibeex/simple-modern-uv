@@ -54,6 +54,9 @@ dev = [
     "funlog>=0.2.1",
 ]
 
+[tool.uv]
+package = true
+
 [project.scripts]
 # Add script entry points here:
 {{ package_name }} = "{{ package_module }}:cli"
