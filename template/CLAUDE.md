@@ -49,8 +49,6 @@ Target Python 3.12-3.13 with modern practices: full type annotations, generics, 
 - Lint code: `just lint` (runs codespell, ruff check/format, basedpyright)
 - Run tests: `just test` or `uv run pytest`
 - Individual test: `uv run pytest -s path/to/test.py`
-- Launch GUI: `uv run llm-ocr`
-- Launch CLI: `uv run llm-ocr-cli [image_file]`
 
 ## Development Workflow
 
