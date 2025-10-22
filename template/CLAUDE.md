@@ -41,6 +41,7 @@ alwaysApply: false
 # Python Guidelines
 
 Target Python 3.12-3.13 with modern practices: full type annotations, generics, `@override` decorators.
+Don't use `re` module for trivial string operations prefer split, join, replace, in, startswith, endswith...
 
 ## Development Commands
 
