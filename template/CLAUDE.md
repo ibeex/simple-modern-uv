@@ -82,7 +82,7 @@ Don't use `re` module for trivial string operations prefer split, join, replace,
 
 - Modern syntax: `str | None`, `dict[str]`, `list[str]` (never `Optional`)
 - Use `StrEnum` for string enums, lowercase values for JSON protocols
-- Multi-line strings: use `dedent().strip()`
+- Multi-line strings: use from `textwrap` `dedent().strip('\n')`
 
 ## Docstrings
 
