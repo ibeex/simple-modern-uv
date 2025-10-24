@@ -41,7 +41,7 @@ alwaysApply: false
 # Python Guidelines
 
 Target Python 3.12-3.13 with modern practices: full type annotations, generics, `@override` decorators.
-Don't use `re` module for trivial string operations prefer split, join, replace, in, startswith, endswith...
+Don't use `re` module for trivial string operations prefer split, join, replace, in, startswith, endswith, ...
 
 ## Development Commands
 
@@ -83,6 +83,7 @@ Don't use `re` module for trivial string operations prefer split, join, replace,
 - Modern syntax: `str | None`, `dict[str]`, `list[str]` (never `Optional`)
 - Use `StrEnum` for string enums, lowercase values for JSON protocols
 - Multi-line strings: use from `textwrap` `dedent().strip('\n')`
+- use dataclasses for data containers
 
 ## Docstrings
 
