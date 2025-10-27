@@ -97,3 +97,4 @@ Don't use `re` module for trivial string operations prefer split, join, replace,
 - Avoid trivial wrapper functions
 - Use `# pyright: ignore[reportUnusedParameter]` for unused params
 - Mention backward compatibility breaks to user
+- Don’t make a class when a simple function suffices — classes add complexity and sometimes unnecessary boilerplate.
