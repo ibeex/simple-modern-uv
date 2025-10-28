@@ -47,6 +47,7 @@ Don't use `re` module for trivial string operations prefer split, join, replace,
 
 - Install dependencies: `just install` or `uv sync --all-extras`
 - Run all checks: `just` (runs install, lint, test)
+- Format code: `just format` (sort imports and format with ruff)
 - Lint code: `just lint` (runs codespell, ruff check/format, basedpyright)
 - Run tests: `just test` or `uv run pytest`
 - Individual test: `uv run pytest -s path/to/test.py`

@@ -13,6 +13,11 @@ install:
 lint:
 	uv run python devtools/lint.py
 
+# Format code (sort imports and format)
+format:
+	uv run ruff check --fix --select I src tests devtools
+	uv run ruff format src tests devtools
+
 # Run tests
 test:
 	uv run pytest
