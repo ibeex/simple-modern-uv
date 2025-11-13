@@ -55,6 +55,7 @@ Don't use `re` module for trivial string operations prefer split, join, replace,
 ## Development Workflow
 
 - Use `uv` exclusively (never direct `pip`/`python`)
+- Use `uv` to manage packages do not edit `pyproject.toml` directly
 - **Required**: Zero linter/test failures before task completion
 - Run `just lint` before committing changes
 
