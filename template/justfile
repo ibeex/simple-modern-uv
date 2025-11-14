@@ -18,6 +18,10 @@ format:
 	uv run ruff check --fix --select I src tests devtools
 	uv run ruff format src tests devtools
 
+# Format markdown files
+format_md files="*.md":
+	uv run rumdl fmt --disable MD013 {{ files }}
+
 # Run tests
 test:
 	uv run pytest

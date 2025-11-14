@@ -71,6 +71,8 @@ Don't use `re` module for trivial string operations prefer split, join, replace,
 - Use absolute imports: `from pkg.module import ...` (not relative)
 - Import from correct modules: `collections.abc`, `typing_extensions`
 - Use `pathlib.Path`, `Path.read_text()` over file operations
+- module follows ./src/package_module/ structure
+- test files in ./tests/
 
 ## Testing
 
