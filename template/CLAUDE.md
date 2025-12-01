@@ -1,104 +1,55 @@
-# CLAUDE.md
+# Python Project
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Modern Python 3.12+ project using uv for package management.
 
----
+## Tech Stack
 
-description: General Guidelines
-globs:
-alwaysApply: true
+Python 3.12+ · uv · ruff · basedpyright · pytest
 
----
+## Project Structure
 
-# Assistant Rules
+- `src/package_module/` - Main package code
+- `tests/` - Test files
+- `devtools/` - Development utilities (lint.py)
 
-Act as a senior engineer: be clear, factual, systematic, and express expert opinions. Suggest better approaches when applicable.
+## Development
 
-Core principles:
+```bash
+just              # Run install, lint, test
+just install      # Install dependencies (uv sync --all-extras)
+just lint         # Run codespell, ruff, basedpyright
+just format       # Sort imports and format code
+just test         # Run pytest
+```
 
-- Be concise and direct
-- Ask for confirmation when instructions are ambiguous
-- Give thoughtful technical opinions without gratuitous praise or enthusiasm
-- State specific actions taken, not vague generalizations
-- Git commit messages: use 50/72 format, don't mention claude or any other AI
+Single test: `uv run pytest -s path/to/test.py`
 
-## Comments
+## Standards
 
-- Use only when code intent isn't obvious
-- Explain WHY, not WHAT
-- Keep concise and production-ready
-- Avoid: obvious descriptions, decorative headings, numbered steps, emojis, unicode
-- Use emojis only consistently for clear meanings (✔︎✘∆‼︎)
-
----
-
-description: Python Coding Guidelines
-globs: \*.py,pyproject.toml
-alwaysApply: false
-
----
-
-# Python Guidelines
-
-Target Python 3.12-3.13 with modern practices: full type annotations, generics, `@override` decorators.
-Don't use `re` module for trivial string operations prefer split, join, replace, in, startswith, endswith, ...
-
-## Development Commands
-
-- Install dependencies: `just install` or `uv sync --all-extras`
-- Run all checks: `just` (runs install, lint, test)
-- Format code: `just format` (sort imports and format with ruff)
-- Lint code: `just lint` (runs codespell, ruff check/format, basedpyright)
-- Run tests: `just test` or `uv run pytest`
-- Individual test: `uv run pytest -s path/to/test.py`
-
-## Development Workflow
-
-- Use `uv` exclusively (never direct `pip`/`python`)
-- Use `uv` to manage packages do not edit `pyproject.toml` directly
-- **Required**: Zero linter/test failures before task completion
-- Run `just lint` before committing changes
-
-## Development Standards
-
+- Use `uv` exclusively (never pip/python directly)
+- Use `uv add`/`uv remove` for dependencies (don't edit pyproject.toml manually)
+- Zero linter/test failures before task completion
 - Resolve basedpyright errors during development
 - Use `# pyright: ignore` sparingly for unfixable issues
-- Ask before globally disabling lint rules
-- Preserve existing comments, pydocs, and log statements
 
-## Imports & Conventions
+## Code Style
 
-- Use absolute imports: `from pkg.module import ...` (not relative)
-- Import from correct modules: `collections.abc`, `typing_extensions`
-- Use `pathlib.Path`, `Path.read_text()` over file operations
-- module follows ./src/package_module/ structure
-- test files in ./tests/
+- Full type annotations, use `@override` decorators
+- Absolute imports: `from pkg.module import ...`
+- Use `pathlib.Path` over file operations
+- Use dataclasses for data containers
+- Prefer simple functions over classes when sufficient
 
 ## Testing
 
-- Complex tests: `tests/test_name.py`
-- Simple tests: inline with `## Tests` comment (no pytest imports)
-- Avoid: throwaway test files, `if __name__ == "__main__"`, trivial tests
+- Test files in `tests/test_*.py`
+- Simple inline tests with `## Tests` comment (no pytest imports needed)
 - Use `raise AssertionError("msg")` not `assert False`
-- Keep assertions simple: `assert x == 5` (no redundant messages)
 
-## Types & Style
+## Detailed Documentation
 
-- Modern syntax: `str | None`, `dict[str]`, `list[str]` (never `Optional`)
-- Use `StrEnum` for string enums, lowercase values for JSON protocols
-- Multi-line strings: use from `textwrap` `dedent().strip('\n')`
-- use dataclasses for data containers
+See `agent_docs/` for details:
 
-## Docstrings
-
-- Triple quotes on own lines, explain WHY not WHAT
-- Use `backticks` for variables, ``` for code blocks
-- Avoid obvious descriptions, document rationale and pitfalls
-- Public methods need docstrings, internal ones only if unclear
-
-## Best Practices
-
-- Avoid trivial wrapper functions
-- Use `# pyright: ignore[reportUnusedParameter]` for unused params
-- Mention backward compatibility breaks to user
-- Don’t make a class when a simple function suffices — classes add complexity and sometimes unnecessary boilerplate.
+- `commands.md` - Full command reference and uv workflows
+- `testing.md` - Testing conventions and patterns
+- `python.md` - Python coding guidelines and style
