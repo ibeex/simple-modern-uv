@@ -1,6 +1,6 @@
 # Python Coding Guidelines
 
-Target: Python 3.12-3.13 with modern practices.
+Target: Python 3.12-3.14 with modern practices.
 
 ## Type Annotations
 
