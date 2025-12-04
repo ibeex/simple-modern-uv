@@ -19,6 +19,7 @@ Target: Python 3.12-3.14 with modern practices.
 ## String Operations
 
 Don't use `re` module for trivial operations. Prefer:
+
 - `str.split()`, `str.join()`
 - `str.replace()`
 - `in`, `str.startswith()`, `str.endswith()`
